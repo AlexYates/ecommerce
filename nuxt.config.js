@@ -101,7 +101,7 @@ export default {
     }
   },
 
-  modern: false,
+  modern: true,
 
   serverMiddleware: [
     '~/serverMiddleware/brands',
