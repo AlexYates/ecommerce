@@ -1,0 +1,92 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+*:focus {
+  /* Remove the outline that comes from base.css. */
+  outline: none !important;
+}
+
+html {
+  /* Maintain vertical scrollbar to prevent visual jump on 'short' pages. */
+  @apply overflow-x-hidden overflow-y-scroll;
+  /* Back/Foreground colours */
+  @apply bg-gray-200 text-gray-800;
+}
+
+/* 
+ * Transitions
+ */
+
+/* Default Page */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s ease-in-out 0.0s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+/* Slide From Bottom */
+.slide-from-bottom-enter-active,
+.slide-from-bottom-leave-active {
+  transition: transform 0.5s ease-in-out 0.25s;
+}
+.slide-from-bottom-enter,
+.slide-from-bottom-leave-to {
+  transform: translateY(100%);
+}
+
+/* Slide Down */
+.slide-from-left-enter-active,
+.slide-from-left-leave-active {
+  transition: transform 0.5s ease-in-out 0.25s;
+}
+.slide-from-left-enter,
+.slide-from-left-leave-to {
+  transform: translateX(-100%);
+}
+
+/* Slide From Right */
+.slide-from-right-enter-active,
+.slide-from-right-leave-active {
+  transition: transform 0.5s ease-in-out 0.25s;
+}
+.slide-from-right-enter,
+.slide-from-right-leave-to {
+  transform: translateX(100%);
+}
+
+/* Slide From Top */
+.slide-from-top-enter-active,
+.slide-from-top-leave-active {
+  transition: transform 0.5s ease-in-out 0.25s;
+}
+.slide-from-top-enter,
+.slide-from-top-leave-to {
+  transform: translateY(-100%);
+}
+
+/*
+ * Animations
+ */
+.rocker-top {
+  animation-delay: 0s;
+  animation-direction: alternate-reverse;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-name: rock;
+  animation-play-state: running;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes rock {
+  0% {
+    transform: rotate(-3.75deg);
+  }
+  100% {
+    transform: rotate(3.75deg);
+  }
+}
